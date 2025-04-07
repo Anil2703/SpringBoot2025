@@ -1,12 +1,21 @@
 package com.rocky.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 /**
  * Represents a car with brand, model, and year attributes.
  */
 public class Car {
 
+    @NotBlank(message = "Brand name cannot be blank")
+    @Size(min = 2, max = 20, message = "Brand name must be between 2 and 20 characters")
     private String brand;
+
+    @NotBlank(message = "Model name cannot be blank")
     private String model;
+
+    @NotBlank(message = "Year cannot be blank")
     private Integer year;
 
     /**

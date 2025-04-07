@@ -2,6 +2,7 @@ package com.rocky.controller;
 
 import com.rocky.model.Car;
 import com.rocky.service.CarsService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,7 +80,7 @@ public class Controller {
      * @return a String message indicating the result of the operation
      */
     @PostMapping("/addCarToInventory")
-    public String addNewCar(@RequestBody Car car) {
+    public String addNewCar(@RequestBody @Valid Car car) {
         System.out.println("request recieved at Controller-- addCarToInventory");
         return carsService.addNewCar(car.getBrand(), car.getModel(), car.getYear());
     }
