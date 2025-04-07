@@ -1,6 +1,8 @@
 #custom Application Server port
 server:
   port: 8081
+  servlet:
+    context-path: /carsapp
 
 #Postgres DataBase Configuration
 spring:
@@ -12,6 +14,9 @@ spring:
     jdbcUrl: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password:
+    #jdbcUrl: jdbc:postgresql://ep-winter-moon-a59f5ymi-pooler.us-east-2.aws.neon.tech/neondb
+    #username: neondb_owner
+    #password: npg_rq9vIOac0TjP
     type: com.zaxxer.hikari.HikariDataSource
     # Hikari
     poolName: SpringBootHikariCP
@@ -28,8 +33,7 @@ logging:
   level:
     root: INFO
     org.springframework.web: DEBUG
-    com.yourapp: TRACE
-
+    com.rocky: DEBUG
   file:
     name: app.log
     path: logs
