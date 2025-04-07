@@ -3,10 +3,9 @@ package com.rocky.controller;
 import com.rocky.model.Car;
 import com.rocky.service.CarsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static com.rocky.constants.Constants.GREET_MESSAGE;
 
@@ -16,27 +15,62 @@ public class Controller {
     @Autowired
     CarsService carsService;
 
+    /**
+     * Returns the default greeting message.
+     * <p>
+     * This method handles HTTP GET requests to the /defaultMessage endpoint.
+     * It returns a predefined greeting message from the constants.
+     *
+     * @return the default greeting message
+     */
     @GetMapping("/defaultMessage")
     public String defaultMessage() {
         return GREET_MESSAGE;
     }
 
-
+    /**
+     * Retrieves the total number of cars in the inventory.
+     *
+     * This method handles HTTP GET requests to the /totalBusinessOrders endpoint.
+     * It fetches the total number of cars from the CarsService and returns it as a String.
+     *
+     * @return a String message indicating the total number of cars in the inventory
+     */
     @GetMapping("/totalBusinessOrders")
     public String getTotalBusinessOrders() {
-        System.out.println("Fetched no. of recs: " + carsService.getTotalBusinessOrders());
+        System.out.println("Fetched no. of cars: " + carsService.getTotalBusinessOrders());
         return carsService.getTotalBusinessOrders();
     }
 
-    @GetMapping("/getCarByModel")
-    public Car getCarByModel() {
-        System.out.println("Car Fetched: " + carsService.getCarByModel());
-        return carsService.getCarByModel();
+    /**
+     * Retrieves all cars from the inventory.
+     * <p>
+     * This method handles HTTP GET requests to the /getAllCars endpoint.
+     * It fetches all car details from the CarsService and returns a list of Car objects.
+     *
+     * @return a list of Car objects containing the details of all cars in the inventory
+     */
+    @GetMapping("/getAllCars")
+    public List<Car> getAllCars() {
+        return carsService.getAllCars();
+    }
+
+    /**
+     * Retrieves a car from the inventory by its model.
+     * <p>
+     * This method handles HTTP GET requests to the /getCarByModel endpoint.
+     * It fetches the car details from the CarsService and returns the Car object.
+     *
+     * @return the Car object containing the details of the car fetched by its model
+     */
+    @GetMapping("/getCarByModel/{model}")
+    public Car getCarByModel(@PathVariable("model") String model) {
+        return carsService.getCarByModel(model);
     }
 
     /**
      * Adds a new car to the inventory.
-     *
+     * <p>
      * This method handles HTTP POST requests to the /addCarToInventory endpoint.
      * It receives a Car object in the request body and passes the car details
      * to the CarsService to add the new car to the inventory.
