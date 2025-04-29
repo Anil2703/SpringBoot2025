@@ -6,14 +6,22 @@ server:
 
 #Postgres DataBase Configuration
 spring:
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
   config:
     activate:
       on-profile: default
   datasource:
     driver-class-name: org.postgresql.Driver
-    jdbcUrl: jdbc:postgresql://localhost:5432/postgres
+    #Enable below for local postgres
+    #jdbcUrl: jdbc:postgresql://localhost:5432/postgres
+    #Enable below for docker container
+    jdbcUrl: jdbc:postgresql://postgres-db:5432/mydb
     username: postgres
-    password:
+    password: admin
+    #Enable below for neon DB
     #jdbcUrl: jdbc:postgresql://ep-winter-moon-a59f5ymi-pooler.us-east-2.aws.neon.tech/neondb
     #username: neondb_owner
     #password: npg_rq9vIOac0TjP
@@ -26,7 +34,8 @@ spring:
     connectionTimeout: 30000
     idleTimeout: 30000
     pool-prepared-statements: true
-
+    initialization-mode: always
+    initialization-fail-timeout: 0
 
 #Logger Configuration
 logging:
