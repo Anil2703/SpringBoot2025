@@ -1,0 +1,57 @@
+2025-12-01T11:42:48.584+05:30  INFO 1359 --- [main] com.rocky.Application                    : Starting Application using Java 21.0.8 with PID 1359 (/Users/anilreddy/Desktop/IntellijWorkspace/SpringBoot2025/target/classes started by anilreddy in /Users/anilreddy/Desktop/IntellijWorkspace/SpringBoot2025)
+2025-12-01T11:42:48.584+05:30 DEBUG 1359 --- [main] com.rocky.Application                    : Running with Spring Boot v3.3.3, Spring v6.1.12
+2025-12-01T11:42:48.585+05:30  INFO 1359 --- [main] com.rocky.Application                    : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T11:42:48.929+05:30  INFO 1359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-01T11:42:48.934+05:30  INFO 1359 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T11:42:48.934+05:30  INFO 1359 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-12-01T11:42:48.950+05:30  INFO 1359 --- [main] o.a.c.c.C.[.[localhost].[/carsapp]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T11:42:48.950+05:30  INFO 1359 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 351 ms
+2025-12-01T11:42:49.022+05:30 DEBUG 1359 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2025-12-01T11:42:49.046+05:30 DEBUG 1359 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-01T11:42:49.058+05:30 DEBUG 1359 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-01T11:42:49.069+05:30 DEBUG 1359 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-01T11:42:49.085+05:30  INFO 1359 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootHikariCP - Starting...
+2025-12-01T11:42:52.253+05:30  INFO 1359 --- [main] com.zaxxer.hikari.pool.HikariPool        : SpringBootHikariCP - Added connection org.postgresql.jdbc.PgConnection@521441d5
+2025-12-01T11:42:52.255+05:30  INFO 1359 --- [main] com.zaxxer.hikari.HikariDataSource       : SpringBootHikariCP - Start completed.
+2025-12-01T11:42:53.513+05:30  INFO 1359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/carsapp'
+2025-12-01T11:42:53.517+05:30  INFO 1359 --- [main] com.rocky.Application                    : Started Application in 5.118 seconds (process running for 5.285)
+2025-12-01T11:42:53.518+05:30  INFO 1359 --- [main] com.rocky.Application                    : Cars Application Started
+2025-12-01T11:43:09.450+05:30  INFO 1359 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/carsapp]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T11:43:09.450+05:30  INFO 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T11:43:09.450+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-01T11:43:09.450+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-01T11:43:09.450+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-01T11:43:09.451+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@30b21131
+2025-12-01T11:43:09.451+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2b35d7d
+2025-12-01T11:43:09.451+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-01T11:43:09.451+05:30  INFO 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-01T11:43:09.454+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/carsapp/getCarByModel/Civic", parameters={}
+2025-12-01T11:43:09.460+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.rocky.controller.Controller#getCarByModel(String)
+2025-12-01T11:43:09.967+05:30  INFO 1359 --- [http-nio-8080-exec-1] com.rocky.dao.CarsDaoImpl                : Car fetched from DB: Car{brand='Honda', model='Civic', year=2025}
+2025-12-01T11:43:09.992+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-12-01T11:43:09.993+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Car{brand='Honda', model='Civic', year=2025}]
+2025-12-01T11:43:09.999+05:30 DEBUG 1359 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-01T11:43:15.662+05:30 DEBUG 1359 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/carsapp/getAllCars", parameters={}
+2025-12-01T11:43:15.663+05:30 DEBUG 1359 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.rocky.controller.Controller#getAllCars()
+2025-12-01T11:43:16.235+05:30  INFO 1359 --- [http-nio-8080-exec-3] com.rocky.dao.CarsDaoImpl                : Cars fetched from DB: [Car{brand='Tesla', model='Model S', year=2022}, Car{brand='Ford', model='Mustang', year=1964}, Car{brand='Honda', model='Civic', year=2025}]
+2025-12-01T11:43:16.241+05:30 DEBUG 1359 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-12-01T11:43:16.241+05:30 DEBUG 1359 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Car{brand='Tesla', model='Model S', year=2022}, Car{brand='Ford', model='Mustang', year=1964}, Car{ (truncated)...]
+2025-12-01T11:43:16.245+05:30 DEBUG 1359 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-01T11:43:47.458+05:30 DEBUG 1359 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/carsapp/defaultMessage", parameters={}
+2025-12-01T11:43:47.459+05:30 DEBUG 1359 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.rocky.controller.Controller#defaultMessage()
+2025-12-01T11:43:47.461+05:30 DEBUG 1359 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-01T11:43:47.462+05:30 DEBUG 1359 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Hello world from SpringBoot 2025."]
+2025-12-01T11:43:47.464+05:30 DEBUG 1359 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-01T11:43:58.285+05:30 DEBUG 1359 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/carsapp/totalBusinessOrders", parameters={}
+2025-12-01T11:43:58.286+05:30 DEBUG 1359 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.rocky.controller.Controller#getTotalBusinessOrders()
+2025-12-01T11:43:59.213+05:30 DEBUG 1359 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [text/plain, */*, application/json, application/*+json]
+2025-12-01T11:43:59.213+05:30 DEBUG 1359 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Fetched no. of recs: 3"]
+2025-12-01T11:43:59.215+05:30 DEBUG 1359 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-01T11:44:07.975+05:30 DEBUG 1359 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/carsapp/getAllCars", parameters={}
+2025-12-01T11:44:07.976+05:30 DEBUG 1359 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.rocky.controller.Controller#getAllCars()
+2025-12-01T11:44:08.529+05:30  INFO 1359 --- [http-nio-8080-exec-6] com.rocky.dao.CarsDaoImpl                : Cars fetched from DB: [Car{brand='Tesla', model='Model S', year=2022}, Car{brand='Ford', model='Mustang', year=1964}, Car{brand='Honda', model='Civic', year=2025}]
+2025-12-01T11:44:08.531+05:30 DEBUG 1359 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-12-01T11:44:08.532+05:30 DEBUG 1359 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Car{brand='Tesla', model='Model S', year=2022}, Car{brand='Ford', model='Mustang', year=1964}, Car{ (truncated)...]
+2025-12-01T11:44:08.533+05:30 DEBUG 1359 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-01T11:50:34.409+05:30  INFO 1359 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : SpringBootHikariCP - Shutdown initiated...
+2025-12-01T11:50:35.231+05:30  INFO 1359 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : SpringBootHikariCP - Shutdown completed.
