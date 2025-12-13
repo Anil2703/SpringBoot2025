@@ -16,6 +16,8 @@ phases:
 
   build:
     commands:
+      - mvn -v
+      - mvn clean package -DskipTests
       - docker build -t $REPO_URI:$IMAGE_TAG .
       - docker push $REPO_URI:$IMAGE_TAG
 
