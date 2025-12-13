@@ -5,7 +5,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
 
 WORKDIR /app
 
-COPY target/SpringBoot2025-1.0-SNAPSHOT.jar app.jar
+COPY target/*.jar app.jar
 
 EXPOSE 8080
 
