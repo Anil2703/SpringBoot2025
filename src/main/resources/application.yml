@@ -18,7 +18,7 @@ spring:
     #Enable below for local postgres
     #jdbcUrl: jdbc:postgresql://localhost:5432/postgres
     #Enable below for docker container
-    jdbcUrl: jdbc:postgresql://postgres-db:5432/mydb
+    #jdbcUrl: jdbc:postgresql://postgres-db:5432/mydb
     #username: postgres
     #password: admin
     #Enable below for neon DB
