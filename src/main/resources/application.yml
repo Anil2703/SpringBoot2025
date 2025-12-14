@@ -1,6 +1,6 @@
 #custom Application Server port
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: /carsapp
 
