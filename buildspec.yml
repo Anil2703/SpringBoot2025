@@ -7,6 +7,10 @@ env:
     CONTAINER_NAME: springboot2025-app
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto17
+
   pre_build:
     commands:
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
@@ -16,6 +20,8 @@ phases:
 
   build:
     commands:
+      - mvn -v
+      - mvn clean package -DskipTests
       - docker build -t $REPO_URI:$IMAGE_TAG .
       - docker push $REPO_URI:$IMAGE_TAG
 
@@ -26,4 +32,3 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-
