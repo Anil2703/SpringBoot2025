@@ -79,7 +79,12 @@
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
             </dependency>
-
+            <!--For RateLimiting-->
+            <dependency>
+            <groupId>com.bucket4j</groupId>
+            <artifactId>bucket4j-core</artifactId>
+            <version>8.10.1</version>
+        </dependency>
         </dependencies>
 
     <repositories>
@@ -87,6 +92,12 @@
             <id>confluent</id>
             <url>https://packages.confluent.io/maven</url>
         </repository>
+
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+
     </repositories>
 
     <build>
