@@ -157,7 +157,10 @@
                                 <delegatePattern>true</delegatePattern>
                                 <useJakartaEe>true</useJakartaEe>
                                 <serializationLibrary>jackson</serializationLibrary>
+                                <skipOperationExample>true</skipOperationExample>
                             </configOptions>
+                            <typeMappings>
+                            </typeMappings>
                         </configuration>
                     </execution>
                 </executions>
