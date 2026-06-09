@@ -2,6 +2,7 @@ package com.rocky.service;
 
 import com.rocky.dao.CarsDaoImpl;
 import com.rocky.model.Car;
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 /**
  * Service class for managing car inventory operations.
+ * This class serves as the business logic layer for all car-related operations.
  */
 @Service
 public class CarsService {
@@ -19,7 +21,7 @@ public class CarsService {
     /**
      * Adds a new car to the inventory.
      *
-     * @param brand the brand of the car
+     * @param brand the brand of the car (2-20 characters)
      * @param model the model of the car
      * @param year the year of the car
      * @return a String message indicating the result of the operation
@@ -33,6 +35,7 @@ public class CarsService {
      *
      * @param model the model of the car to be fetched
      * @return the Car object containing the details of the car fetched by its model
+     * @throws CarNotFoundException if no car with the specified model is found
      */
     public Car getCarByModel(String model) {
         return carsDao.getCarByModel(model);
