@@ -1,0 +1,83 @@
+
+# Maven - MUST ignore target directory completely
+target/
+target/**/*
+
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# Build artifacts
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Logs
+*.log
+logs/
+app.log
+
+# OS
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Java
+*.class
+*.ctxt
+.mtj.tmp/
+*.jar
+*.jar.original
+*.jmod
+*.jsa
+*.jfr
+
+# Database
+*.db
+*.sqlite
+*.h2.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (if using frontend build tools)
+node_modules/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+.~*
+

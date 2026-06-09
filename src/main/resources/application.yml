@@ -48,3 +48,16 @@ logging:
     path: logs
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# OpenAPI and Swagger UI Configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+    url: /v3/api-docs
+    display-request-duration: true
+  show-actuator: false

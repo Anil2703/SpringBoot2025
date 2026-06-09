@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: Car Inventory API
+  description: API for managing car inventory
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /defaultMessage:
+    get:
+      summary: Get default greeting message
+      operationId: getDefaultMessage
+      tags:
+        - Car API
+      responses:
+        '200':
+          description: Successfully retrieved greeting message
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /totalBusinessOrders:
+    get:
+      summary: Get total number of cars
+      operationId: getTotalBusinessOrders
+      tags:
+        - Car API
+      responses:
+        '200':
+          description: Successfully retrieved total cars count
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /getAllCars:
+    get:
+      summary: Retrieve all cars from inventory
+      operationId: getAllCars
+      tags:
+        - Car API
+      responses:
+        '200':
+          description: Successfully retrieved all cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Car'
+        '500':
+          description: Server error
+
+  /getCarByModel/{model}:
+    get:
+      summary: Retrieve car by model
+      operationId: getCarByModel
+      tags:
+        - Car API
+      parameters:
+        - name: model
+          in: path
+          required: true
+          description: Car model identifier
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved car
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+        '404':
+          description: Car not found
+
+  /addCarToInventory:
+    post:
+      summary: Add a new car to inventory
+      operationId: addCarToInventory
+      tags:
+        - Car API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Car'
+      responses:
+        '200':
+          description: Successfully added car
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid car data
+
+components:
+  schemas:
+    Car:
+      type: object
+      title: Car
+      description: Represents a car with brand, model, and year attributes
+      required:
+        - brand
+        - model
+        - year
+      properties:
+        brand:
+          type: string
+          description: The brand/manufacturer of the car
+          minLength: 2
+          maxLength: 20
+          example: Toyota
+        model:
+          type: string
+          description: The model name of the car
+          example: Camry
+        year:
+          type: integer
+          format: int32
+          description: The manufacturing year of the car
+          example: 2023
+

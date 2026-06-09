@@ -85,6 +85,25 @@
             <artifactId>bucket4j-core</artifactId>
             <version>8.10.1</version>
         </dependency>
+
+            <!-- OpenAPI and Swagger UI -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+
+            <!-- Jackson annotations for OpenAPI models -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+            </dependency>
+            <!-- Support for JsonNullable used by openapi-generator generated models -->
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>0.2.4</version>
+            </dependency>
         </dependencies>
 
     <repositories>
@@ -113,6 +132,38 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <!-- OpenAPI Code Generator Plugin -->
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>7.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
+                            <generatorName>spring</generatorName>
+                            <apiPackage>com.rocky.api</apiPackage>
+                            <modelPackage>com.rocky.model</modelPackage>
+                            <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+                            <configOptions>
+                                <basePackage>com.rocky</basePackage>
+                                <configPackage>com.rocky.config</configPackage>
+                                <useSpringBootStarter>true</useSpringBootStarter>
+                                <delegatePattern>true</delegatePattern>
+                                <useJakartaEe>true</useJakartaEe>
+                                <serializationLibrary>jackson</serializationLibrary>
+                                <skipOperationExample>true</skipOperationExample>
+                            </configOptions>
+                            <typeMappings>
+                            </typeMappings>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
